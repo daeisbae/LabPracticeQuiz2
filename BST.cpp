@@ -352,24 +352,24 @@
 		if (this->elementCount == 0) {
 			throw EmptyDataCollectionException("Binary search tree is empty.");
 		}
-		return sum() / (double) this->elementCount;
+		return sum() / (double) this->nodesCount();
 	}
 
 	// Question 9
-	// void BST::printInReverseOrder() const {
-	// 	if (this->elementCount == 0) {
-	// 		throw EmptyDataCollectionException("Binary search tree is empty.");
-	// 	}
-	// 	printInReverseOrderR(this->root);
-	// }
+	void BST::printInReverseOrder() const {
+		if (this->elementCount == 0) {
+			throw EmptyDataCollectionException("Binary search tree is empty.");
+		}
+		printInReverseOrderR(this->root);
+	}
 
-	// // NOT SURE
-	// void BST::printInReverseOrderR(BSTNode* current) const {
-	// 	if (current == NULL) {
-	// 		return;
-	// 	}
+	// NOT SURE
+	void BST::printInReverseOrderR(BSTNode* current) const {
+		if (current == NULL) {
+			return;
+		}
 
-	// 	printInReverseOrderR(current->right);
-	// 	cout << current->element << " ";
-	// 	printInReverseOrderR(current->left);
-	// }
+		printInReverseOrderR(current->right);
+		cout << current->element << " ";
+		printInReverseOrderR(current->left);
+	}
