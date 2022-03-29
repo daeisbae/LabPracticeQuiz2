@@ -12,6 +12,8 @@
  */
 
 #include "BST.h"
+#include <iostream>
+using namespace std;
 	
 // You can modify the implementation of these methods, but cannot modify their proptotype.
 // However, if you modify the implementation of these methods, your code must still 

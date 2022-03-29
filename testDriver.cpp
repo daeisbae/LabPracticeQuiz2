@@ -388,6 +388,62 @@ void test_average() {
     cout << "Testing average() Passed" << endl << endl;
 }
 
+void test_printInReverseOrder() {
+    cout << "Testing printInReverseOrder()..." << endl;
+    // Test 1
+    cout << "Part 1: ";
+    BST* bst = new BST();
+
+    bst->insert(5);
+    bst->insert(3);
+    bst->insert(7);
+
+    bst->printInReverseOrder();
+    cout << endl;
+    delete bst;
+
+
+    // Test 2
+    cout << "Part 2: ";
+    BST* bst2 = new BST();
+    try {
+        bst2->printInReverseOrder();    
+    }
+    catch (EmptyDataCollectionException& e) {
+        delete bst2;
+        cout << "Passed!" << endl;
+    }
+
+    // Test 3
+    cout << "Part 3: ";
+    BST* bst3 = new BST();
+    bst3->insert(5);
+    bst3->insert(3);
+    bst3->insert(7);
+    bst3->insert(2);
+    bst3->insert(4);
+    bst3->insert(6);
+    bst3->insert(1);
+
+    bst3->printInReverseOrder();
+    cout << endl;
+    delete bst3;
+    cout << "Passed!" << endl;
+
+    // Test 4
+    cout << "Part 4: ";
+    BST* bst4 = new BST();
+    bst4->insert(0);
+    bst4->insert(1);
+
+    bst4->printInReverseOrder();
+    cout << endl;
+    delete bst4;
+    cout << "Passed!" << endl;
+
+    cout << "Testing printInReverseOrder() Passed" << endl << endl;
+}
+
 int main() {
     test_nodesCount();
     test_min();
@@ -397,5 +453,6 @@ int main() {
     test_height();
     test_sum();
     test_average();
+    test_printInReverseOrder();
     return 0;
 }
